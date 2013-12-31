@@ -1,6 +1,6 @@
 meteor-angular-ui-router
 ========================
-- - -
+
 > [angular-ui-router](https://github.com/angular-ui/ui-router "angular-ui-router") package for Meteor.
 
 > Use [ngMeteor](https://github.com/loneleeandroo/ngMeteor "ngMeteor") as underlying meteor-angular bridge.
