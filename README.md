@@ -1,7 +1,7 @@
 meteor-angular-ui-router
 ========================
 - - -
-> [angular-ui-router](https://github.com/angular-ui/ui-router "angular-ui-router") repackaged for Meteor.
+> [angular-ui-router](https://github.com/angular-ui/ui-router "angular-ui-router") package for Meteor.
 
 > Use [ngMeteor](https://github.com/loneleeandroo/ngMeteor "ngMeteor") as underlying meteor-angular bridge.
 
@@ -78,7 +78,7 @@ Basic stuffs work out of the box, `{{> foo}}`, `{{foo}}`, etc, but soon you'll f
 ```
 template: Meteor.render(Template.foo)
 ```
-This will create a reactive context and auto-update your DOM while model changes.
+This will create a reactive context and auto-update your DOM when model changes.
 But a new problem arises: your Angular stuff in the template will stop working, because the DOM is updated after [bootstrap phase](http://docs.angularjs.org/api/angular.bootstrap) and Angular's runtime have got no chance to re-[$compile](http://docs.angularjs.org/api/ng.$compile) it. The solution is easy, wrap Angular stuff in a [`{{#constant}}`](http://docs.meteor.com/#constant) block:
 ```
 <template name='foo'>
