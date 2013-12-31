@@ -10,6 +10,11 @@ meteor-angular-ui-router
 mrt add angular-ui-router
 ```
 
+### Live demo
+Demo: [http://angular-ui-router-demo.meteor.com/](http://angular-ui-router-demo.meteor.com/)
+
+Code: [https://github.com/ccll/meteor-angular-ui-router-demo](https://github.com/ccll/meteor-angular-ui-router-demo)
+
 ### Usage
 
 #### partials/state1.html
@@ -58,9 +63,6 @@ ngMeteor.config(['$stateProvider', '$urlRouterProvider',
     }
 ]);
 ```
-
-### Live demo and source code
-(Coming soon)
 
 
 ### Note about templating
