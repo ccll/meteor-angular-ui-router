@@ -1,6 +1,6 @@
 meteor-angular-ui-router
 ========================
-
+- - -
 > [angular-ui-router](https://github.com/angular-ui/ui-router "angular-ui-router") repackaged for Meteor.
 
 > Use [ngMeteor](https://github.com/loneleeandroo/ngMeteor "ngMeteor") as underlying meteor-angular bridge.
@@ -64,20 +64,17 @@ ngMeteor.config(['$stateProvider', '$urlRouterProvider',
 
 
 ### Note about templating
-> While 'Template.foo' can be passed directly to angular-ui-router, you may attempted to use Handlebars's templating facility together with Angular's. Here is the advice: **DON'T!!**
+While 'Template.foo' can be passed directly to angular-ui-router, you may attempted to use Handlebars's templating facility together with Angular's. Here is the advice: **DON'T!!**
 
-<!-- -->
-> Why?
+Why?
 
-<!-- -->
-> Short anwser:
+**Short anwser:**
 
-> The benefits does not worth the effort.
+The benefits does not worth the effort.
 
-<!-- -->
-> Long version:
+**Long version:**
 
-> Basic stuffs work out of the box, `{{> foo}}`, `{{foo}}`, etc, but soon you'll find your page is non-reactive because angular-ui-router is not running in a [reactive context](http://docs.meteor.com/#reactivity), the solution is to wrap you template function in a call to [`Meteor.render(..)`](http://docs.meteor.com/#meteor_render), which reads:
+Basic stuffs work out of the box, `{{> foo}}`, `{{foo}}`, etc, but soon you'll find your page is non-reactive because angular-ui-router is not running in a [reactive context](http://docs.meteor.com/#reactivity), the solution is to wrap you template function in a call to [`Meteor.render(..)`](http://docs.meteor.com/#meteor_render), which reads:
 ```
 template: Meteor.render(Template.foo)
 ```
@@ -92,12 +89,11 @@ But a new problem arises: your Angular stuff in the template will stop working, 
 ..
 </template>
 ```
->> (ngMeteor uses '[[..]]' as interpolation mark to avoid conflicts with Handlebars.)
+(ngMeteor uses '[[..]]' as interpolation mark to avoid conflicts with Handlebars.)
 
-> This prevent the block from auto-updating so your Angular stuff is safe.
+This prevent the block from auto-updating so your Angular stuff is safe.
 
-> As we go this far, everything looks greate, except now your code is more complicated, hard to maintain, and the benefit is trivial.
+As we go this far, everything looks greate, except now your code is more complicated, hard to maintain, and the benefit is trivial.
 
-<!-- -->
-> In my opinion Angular's templating is more powerful and flexible, so stick with it and throw Handlebars away.
+In my opinion Angular's templating is more powerful and flexible, so stick with it and throw Handlebars away.
 
