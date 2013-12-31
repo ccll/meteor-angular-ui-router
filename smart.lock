@@ -1,0 +1,20 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "angular-ui-router": {
+        "path": "."
+      }
+    },
+    "packages": {
+      "angular-ui-router": {
+        "path": "."
+      },
+      "ngMeteor": {
+        "git": "https://github.com/loneleeandroo/ngMeteor.git",
+        "branch": "master",
+        "commit": "73e69605964295567606bffc0387be8dca5da455"
+      }
+    }
+  }
+}
