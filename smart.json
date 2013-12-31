@@ -4,7 +4,7 @@
     "homepage": "https://github.com/ccll/meteor-angular-ui-router",
     "author": "ccll <cailei@live.com>",
     "git": "https://github.com/ccll/meteor-angular-ui-router.git",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "packages": {
         "ngMeteor": {
             "git": "https://github.com/loneleeandroo/ngMeteor.git",
