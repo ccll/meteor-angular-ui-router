@@ -10,6 +10,12 @@ meteor-angular-ui-router
 mrt add angular-ui-router
 ```
 
+### v0.2.0 breaking change
+
+* Add support for [angularite](https://github.com/ccll/meteor-angularite), an lightweight meteor-angular bridge.
+* Dependency on ngMeteor changed to a 'weak' one. Which means if you like to stick with ngMeteor, you need to add ngMeteor explicitly in _your_ smart.json.
+
+
 ### Live demo
 Demo: [http://angular-ui-router-demo.meteor.com/](http://angular-ui-router-demo.meteor.com/)
 
@@ -63,39 +69,4 @@ ngMeteor.config(['$stateProvider', '$urlRouterProvider',
     }
 ]);
 ```
-
-
-### Note about templating
-While 'Template.foo' can be passed directly to angular-ui-router, you may attempted to use Handlebars's templating facility together with Angular's. Here is the advice: **DON'T!!**
-
-Why?
-
-**Short anwser:**
-
-The benefits does not worth the effort.
-
-**Long version:**
-
-Basic stuffs work out of the box, `{{> foo}}`, `{{foo}}`, etc, but soon you'll find your page is non-reactive because angular-ui-router is not running in a [reactive context](http://docs.meteor.com/#reactivity), the solution is to wrap you template function in a call to [`Meteor.render(..)`](http://docs.meteor.com/#meteor_render), which reads:
-```
-template: Meteor.render(Template.foo)
-```
-This will create a reactive context and auto-update your DOM when model changes.
-But a new problem arises: your Angular stuff in the template will stop working, because the DOM is updated after [bootstrap phase](http://docs.angularjs.org/api/angular.bootstrap) and Angular's runtime have got no chance to re-[$compile](http://docs.angularjs.org/api/ng.$compile) it. The solution is easy, wrap Angular stuff in a [`{{#constant}}`](http://docs.meteor.com/#constant) block:
-```
-<template name='foo'>
-..
-{{#constant}}
-<span>[[ my_angular_var ]]</span>
-{{/constant}}
-..
-</template>
-```
-(ngMeteor uses '[[..]]' as interpolation mark to avoid conflicts with Handlebars.)
-
-This prevent the block from auto-updating so your Angular stuff is safe.
-
-As we go this far, everything looks greate, except now your code is more complicated, hard to maintain, and the benefit is trivial.
-
-In my opinion Angular's templating is more powerful and flexible, so stick with it and throw Handlebars away.
 

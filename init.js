@@ -1,2 +1,9 @@
+
 // Add module 'ui.router' as dependency.
-ngMeteor.requires.push('ui.router');
+Meteor.startup(function() {
+    if (typeof(ngMeteor) !== 'undefined') {
+        ngMeteor.requires.push('ui.router');
+    }
+
+});
+
