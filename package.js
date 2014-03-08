@@ -2,11 +2,21 @@ Package.describe({
     summary: "angular-ui-router, the de-facto solution to flexible routing with nested views."
 });
 
+function isPackageExists(pkgname) {
+    var fs = Npm.require('fs');
+    var path = Npm.require('path');
+    var pkgpath = path.join('packages', pkgname);
+    return fs.existsSync(pkgpath);
+}
+
 Package.on_use(function(api) {
     api.use('bower', 'client');
 
-    api.use('angularite', 'client', {weak: true});
-    api.use('ngMeteor', 'client', {weak: true});
+    if (isPackageExists('angularite')) {
+        api.use('angularite', 'client');
+    } else if (isPackageExists('ngMeteor')) {
+        api.use('ngMeteor', 'client', {weak: true});
+    }
 
     // Install bower components.
     api.add_files('smart.json', 'client');
