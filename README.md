@@ -76,7 +76,7 @@ ngMeteor.config(['$stateProvider', '$urlRouterProvider',
 ```
 
 
-### NOTE about meteor 'blaze-rc0' branch
+## NOTE about meteor 'blaze-rc0' branch
 
 Meteor has released a preview candidate, which replaced it's rendering system from Spark to Blaze, this stops ui-router from rendering correctly, the solution is:
 change
