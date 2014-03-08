@@ -5,25 +5,30 @@ meteor-angular-ui-router
 
 > Use [ngMeteor](https://github.com/loneleeandroo/ngMeteor "ngMeteor") as underlying meteor-angular bridge.
 
-### Install
+## Install
 ```
 mrt add angular-ui-router
 ```
 
-### v0.2.0 breaking change
+## v0.2.0 breaking change
 
-* Add support for [angularite](https://github.com/ccll/meteor-angularite), an lightweight meteor-angular bridge.
-* Dependency on ngMeteor changed to a 'weak' one. Which means if you like to stick with ngMeteor, you need to add ngMeteor explicitly in _your_ smart.json.
+* Add support for [angularite](https://github.com/ccll/meteor-angularite), a lightweight meteor-angular bridge.
+* Dependency on ngMeteor changed to a 'weak' one. Which means if you like to stick with ngMeteor, you need to add ngMeteor dependency explicitly in __your__ app's smart.json.
 
 
-### Live demo
+## Use with angularite
+```
+var app = Angularite.module('myApp', ['ui.router']);
+```
+
+## Live demo
 Demo: [http://angular-ui-router-demo.meteor.com/](http://angular-ui-router-demo.meteor.com/)
 
 Code: [https://github.com/ccll/meteor-angular-ui-router-demo](https://github.com/ccll/meteor-angular-ui-router-demo)
 
-### Usage
+## Usage
 
-#### partials/state1.html
+### partials/state1.html
 ```
 <template name="state1">
     <div>
@@ -42,7 +47,7 @@ Code: [https://github.com/ccll/meteor-angular-ui-router-demo](https://github.com
 </template>
 ```
 
-#### app.js
+### app.js
 ```
 ngMeteor.config(['$stateProvider', '$urlRouterProvider',
     function ($stateProvider, $urlRouterProvider) {
