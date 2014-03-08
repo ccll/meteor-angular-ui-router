@@ -4,7 +4,7 @@
     "homepage": "https://github.com/ccll/meteor-angular-ui-router",
     "author": "ccll_cailei <cailei@live.com>",
     "git": "https://github.com/ccll/meteor-angular-ui-router.git",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "packages": {
         "bower": {
             "version": "0.1.2"
