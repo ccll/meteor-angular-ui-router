@@ -76,14 +76,32 @@ ngMeteor.config(['$stateProvider', '$urlRouterProvider',
 ```
 
 
-## NOTE about meteor 'blaze-rc0' branch
+## NOTE about meteor 'blaze-rc0'
 
-Meteor has released a preview candidate, which replaced it's rendering system from Spark to Blaze, this stops ui-router from rendering correctly, the solution is:
+Meteor has released a preview candidate, which replaced it's rendering system from Spark to Blaze, this stops ui-router from rendering correctly.
+I've added a solution to `blaze` branch, you can use it like this:
+
+#### smart.json
+```
+{
+    "packages": {
+        "angular-ui-router": {
+            "git": "https://github.com/ccll/meteor-angular-ui-router.git",
+            "branch": "blaze"
+        }
+    }
+}
+```
+
+#### your router definition:
+
 change
 ```
 template: Template['state1']
 ```
 to
 ```
-template: Template['state1'].render().toHTML()
+template: UiRouter.template('state1')
 ```
+
+When meteor's blaze is official release, I'll release this too.
