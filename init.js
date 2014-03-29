@@ -9,7 +9,9 @@ Meteor.startup(function() {
 // Exported.
 UiRouter = {
     template: function(templName) {
-        return Template[templName].render().toHTML();
+        return function() {
+            return Template[templName].render().toHTML();
+        }
     }
 }
 
