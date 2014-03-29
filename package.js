@@ -11,6 +11,9 @@ function packageExists(pkgname) {
 
 Package.on_use(function(api) {
     api.use('bower', 'client');
+    api.use('templating', 'client');
+
+    api.export('UiRouter', 'client');
 
     if (packageExists('angularite')) {
         api.use('angularite', 'client');
