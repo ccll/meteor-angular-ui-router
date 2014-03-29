@@ -10,6 +10,24 @@ meteor-angular-ui-router
 mrt add angular-ui-router
 ```
 
+## v0.3.0 add support Meteor 0.8.0 (Blaze).
+
+Meteor's new rendering engine Blaze is not API-compatible with the old one Spark.
+You need to change your template usage like this:
+
+#### your router definition:
+
+change
+```
+template: Template['state1']
+```
+to
+```
+template: UiRouter.template('state1')
+```
+
+> `UiRouter.template()` is a helper function created to ease your transition.
+
 ## v0.2.0 breaking change
 
 * Add support for [angularite](https://github.com/ccll/meteor-angularite), a lightweight meteor-angular bridge.
@@ -74,34 +92,3 @@ ngMeteor.config(['$stateProvider', '$urlRouterProvider',
     }
 ]);
 ```
-
-
-## NOTE about meteor 'blaze-rc0'
-
-Meteor has released a preview candidate, which replaced it's rendering system from Spark to Blaze, this stops ui-router from rendering correctly.
-I've added a solution to `blaze` branch, you can use it like this:
-
-#### smart.json
-```
-{
-    "packages": {
-        "angular-ui-router": {
-            "git": "https://github.com/ccll/meteor-angular-ui-router.git",
-            "branch": "blaze"
-        }
-    }
-}
-```
-
-#### your router definition:
-
-change
-```
-template: Template['state1']
-```
-to
-```
-template: UiRouter.template('state1')
-```
-
-When meteor's blaze is official release, I'll release this too.
