@@ -10,7 +10,7 @@ meteor-angular-ui-router
 mrt add angular-ui-router
 ```
 
-## v0.3.0 add support Meteor 0.8.0 (Blaze).
+## v0.3.0 add support for Meteor 0.8.0 (Blaze).
 
 Meteor's new rendering engine Blaze is not API-compatible with the old one Spark.
 You need to change your template usage like this:
