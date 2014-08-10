@@ -6,9 +6,7 @@
     "git": "https://github.com/ccll/meteor-angular-ui-router.git",
     "version": "0.3.3",
     "packages": {
-        "bower": {
-            "git": "https://github.com/mquandalle/meteor-bower.git"
-        }
+        "bower": "0.1.10"
     },
     "bower": {
         "angular-ui-router": "0.2.10"
