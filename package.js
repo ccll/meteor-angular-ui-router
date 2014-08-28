@@ -15,11 +15,8 @@ Package.on_use(function(api) {
 
     api.export('UiRouter', 'client');
 
-    if (packageExists('angularite')) {
-        api.use('angularite', 'client');
-    } else if (packageExists('ngMeteor')) {
-        api.use('ngMeteor', 'client');
-    }
+    api.use('urigo:ngmeteor', 'client');
+
 
     // Install bower components.
     api.add_files('smart.json', 'client');
