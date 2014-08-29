@@ -23,12 +23,12 @@ Package.on_use(function(api) {
   api.use('urigo:ngmeteor@0.2.0', 'client');
 
 
-  api.add_files('angular-ui-router.min.js', 'client');
+  api.addFiles('angular-ui-router.min.js', 'client');
   // Install bower components.
-  api.add_files('smart.json', 'client');
+  api.addFiles('smart.json', 'client');
 
   // Client files.
-  api.add_files('init.js', 'client');
+  api.addFiles('init.js', 'client');
 });
 
 Package.onTest(function(api) {
