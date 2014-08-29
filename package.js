@@ -20,7 +20,7 @@ Package.on_use(function(api) {
 
   api.export('UiRouter', 'client');
 
-  api.use('urigo:ngmeteor', 'client');
+  api.use('urigo:ngmeteor@0.2.0', 'client');
 
 
   api.add_files('angular-ui-router.min.js', 'client');
