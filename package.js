@@ -14,7 +14,6 @@ function packageExists(pkgname) {
 Package.on_use(function(api) {
   api.versionsFrom('METEOR@0.9.0.1');
   api.use('tinytest');
-  api.use('urigo:angular-ui-router');
 
   api.use('bower', 'client');
   api.use('templating', 'client');
@@ -33,6 +32,5 @@ Package.on_use(function(api) {
 
 Package.onTest(function(api) {
   api.use('tinytest');
-  api.use('urigo:angular-ui-router');
   api.addFiles('urigo:angular-ui-router-tests.js');
 });
