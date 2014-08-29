@@ -1,5 +1,7 @@
 Package.describe({
-    summary: "angular-ui-router, the de-facto solution to flexible routing with nested views."
+  summary: "angular-ui-router, the de-facto solution to flexible routing with nested views.",
+  version: "0.4.0",
+  git: "https://github.com/Urigo/meteor-angular-ui-router.git"
 });
 
 function packageExists(pkgname) {
@@ -10,17 +12,27 @@ function packageExists(pkgname) {
 }
 
 Package.on_use(function(api) {
-    api.use('bower', 'client');
-    api.use('templating', 'client');
+  api.versionsFrom('METEOR@0.9.0.1');
+  api.use('tinytest');
+  api.use('urigo:angular-ui-router');
 
-    api.export('UiRouter', 'client');
+  api.use('bower', 'client');
+  api.use('templating', 'client');
 
-    api.use('urigo:ngmeteor', 'client');
+  api.export('UiRouter', 'client');
+
+  api.use('urigo:ngmeteor', 'client');
 
 
-    // Install bower components.
-    api.add_files('smart.json', 'client');
+  // Install bower components.
+  api.add_files('smart.json', 'client');
 
-    // Client files.
-    api.add_files('init.js', 'client');
+  // Client files.
+  api.add_files('init.js', 'client');
+});
+
+Package.onTest(function(api) {
+  api.use('tinytest');
+  api.use('urigo:angular-ui-router');
+  api.addFiles('urigo:angular-ui-router-tests.js');
 });

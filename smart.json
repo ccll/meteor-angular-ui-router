@@ -1,10 +1,10 @@
 {
     "name": "angular-ui-router",
     "description": "angular-ui-router, the de-facto solution to flexible routing with nested views",
-    "homepage": "https://github.com/ccll/meteor-angular-ui-router",
-    "author": "ccll_cailei <cailei@live.com>",
-    "git": "https://github.com/ccll/meteor-angular-ui-router.git",
-    "version": "0.3.3",
+    "homepage": "https://github.com/Urigo/meteor-angular-ui-router",
+    "author": "ccll_cailei <cailei@live.com> & urigo <uri.goldshtein@gmail.com>",
+    "git": "https://github.com/Urigo/meteor-angular-ui-router.git",
+    "version": "0.4.0",
     "packages": {
         "bower": "0.1.10"
     },
