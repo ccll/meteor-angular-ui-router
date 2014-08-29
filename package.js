@@ -15,7 +15,7 @@ Package.on_use(function(api) {
   api.versionsFrom('METEOR@0.9.0.1');
   api.use('tinytest');
 
-  api.use('bower', 'client');
+  //api.use('bower', 'client');
   api.use('templating', 'client');
 
   api.export('UiRouter', 'client');
@@ -23,6 +23,7 @@ Package.on_use(function(api) {
   api.use('urigo:ngmeteor', 'client');
 
 
+  api.add_files('angular-ui-router.min.js', 'client');
   // Install bower components.
   api.add_files('smart.json', 'client');
 
